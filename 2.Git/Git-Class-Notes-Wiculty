@@ -48,6 +48,45 @@ git show b85a6e123
 SHA / Version / Revison / Commit Id
 
 #
+Setting up mandatory configurations:
+=============================================
+$ git config --global user.name "Nageswara Rao P"
+$ git config --global user.email "nageshvkn@gmail.com"
+
+Check the configurations using below command
+$ git config --list
+
+Git stores all configurations in below file
+"$USER_HOME/.gitconfig"
+
+Save Git user's password
+$ git config --global credential.helper store
+
+#
+Settng up token to access GitHub
+========================================
+1. go to https://github.com
+
+2. Generate toke from github
+click on user-profile icon (top right) .. click on 'settings' .. click on 'Developer settings' .. click on 'Personal access tokens' .. click on 'Generate new token' .. give a name under 'Note' (example:class) .. select 'No expiration' from 'Expiration' drop-down box .. click on 'repo' check box under 'Select scopes' .. and finally click on 'Generate token' button.
+
+3. Store the token in your machine using below command
+$ git remote set-url origin https://nageshvkn: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@github.com/nageshvkn/wiculty29.git
+
+Note: in the above command
+- 'nageshvkn' is your GitHub user-name.
+- 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 IS your token generated from GitHub.
+- github.com/nageshvkn/wiculty29.git is your repository path. don't give 'https'
+
+
+
+
+
+
+
+
+
+#
 Creating remote repository in github
 ===============
 1. create an account in github.com
@@ -72,21 +111,6 @@ Creating remote repository in github
 
 	--> git log Login.java
 
-#
-Setting up mandatory configurations:
-=============================================
-$ git config --global user.name "Nageswara Rao P"
-$ git config --global user.email "nageshvkn@gmail.com"
-
-Check the configurations using below command
-$ git config --list
-
-Git stores all configurations in below file
-"$USER_HOME/.gitconfig"
-
-Save Git user's password
-$ git config --global credential.helper store
-
 
 # Understand Git Jargon.
 	- Remote Repository
@@ -105,6 +129,12 @@ $ git config --global credential.helper store
 # List all the commits based on the commit message
         $ git log --grep="math function"
         
+# List the commits in short form at a high-level
+	$ git log --oneline
+	
+# Print given no. of commits
+	$ git log -n1
+	  
 #Qn.
 Show me all commits made by user "harry" AND has a commit message "math function" in it.
 
@@ -121,7 +151,7 @@ $ git diff --staged Login.java
 
 # See the content change of a file after the commit
 $ git show 123abc456
-$ git diff 123abc..345abc
+$ git diff 123abcc..345abcd
 
 
 2. Deleting a file
@@ -283,12 +313,9 @@ Git stores each change as SHA values but SVN uses simple numbers as revisions.
 
 Qns:
 ====
-1. How to clone a particular directory from remote.
-2. Can we clone a single file from remote repository?
-3. git stash
+1. git stash
 
 Pending:
-1. How do you make previous commit as latest
-2. How do you resurruct a deleted file?
+1. How do you make previous commit as latest / How do you resurruct a deleted file?
 
 
